@@ -7,6 +7,31 @@
   <title>Movie History</title>
 </head>
 <body>
-  <button class="btn btn-dark">test button</button>
+  <!-- Navigation -->
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand typewriter" href="#home">Movie History</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="not-authed nav-item nav-link">Authentication <span class="sr-only">(current)</span></a>
+          <a class="authed nav-item nav-link" href="#explore">Movies</a>
+          <a id="logout" class="authed nav-item nav-link" href="#features">Logout</a>
+        </div>
+      </div>
+    </div>
+  </nav><!-- End Navigation -->
+
+  <div class="container">
+    <div id="auth" class="not-authed text-center">
+      <button id="google-auth" class="p-0 bg-transparent border-0"><img src="./img/google.png" alt="google button"></button>
+    </div>
+
+    <div id="movies" class="authed">
+      <h3>Movies</h3>
+    </div>
+  </div>
 </body>
 </html>
