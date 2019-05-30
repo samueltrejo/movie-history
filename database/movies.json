@@ -1,0 +1,37 @@
+{
+  "movie1": {
+    "title": "Divergent",
+    "mpaa": "PG-13",
+    "image": "http://www.gstatic.com/tv/thumb/v22vodart/10102709/p10102709_v_v8_at.jpg"
+  },
+  "movie2": {
+    "title": "Insurgent",
+    "mpaa": "PG-13",
+    "image": "http://www.gstatic.com/tv/thumb/v22vodart/10809821/p10809821_v_v8_aj.jpg"
+  },
+  "movie3": {
+    "title": "Allegiant",
+    "mpaa": "PG-13",
+    "image": "http://www.gstatic.com/tv/thumb/v22vodart/12003852/p12003852_v_v8_aa.jpg"
+  },
+  "movie4": {
+    "title": "Hunger Games",
+    "mpaa": "PG-13",
+    "image": "http://www.gstatic.com/tv/thumb/v22vodart/8648012/p8648012_v_v8_ah.jpg"
+  },
+  "movie5": {
+    "title": "Hunger Games, Catching Fire",
+    "mpaa": "PG-13",
+    "image": "http://www.gstatic.com/tv/thumb/v22vodart/9364987/p9364987_v_v8_ag.jpg"
+  },
+  "movie6": {
+    "title": "Hunger Games, Mocking Jay Part 1",
+    "mpaa": "PG-13",
+    "image": "http://www.gstatic.com/tv/thumb/v22vodart/10318081/p10318081_v_v8_ae.jpg"
+  },
+  "movie7": {
+    "title": "Hunger Games, Mocking Jay Part 2",
+    "mpaa": "PG-13",
+    "image": "http://www.gstatic.com/tv/thumb/v22vodart/10989172/p10989172_v_v8_ad.jpg"
+  }
+}
