@@ -2,6 +2,7 @@ import $ from 'jquery';
 
 import movieData from '../helpers/data/movies-data';
 import print from '../helpers/print';
+import watchedlist from './watchedlist';
 
 const overlayEvents = () => {
   $('.card-img-overlay').hide();
@@ -9,7 +10,7 @@ const overlayEvents = () => {
     const overlayId = event.target.nextElementSibling.id;
     $(`#${overlayId}`).fadeIn();
     $(`#${overlayId}`).mouseleave(() => {
-      $(`#${overlayId}`).fadeOut();
+      $(`#${overlayId}`).hide();
     });
   });
 };
@@ -21,11 +22,13 @@ const writeMovies = (array) => {
     domString += `  <img id=${item.id} src=${item.image} class="d-block w-100 movie-image" alt="movie cover of ${item.title}">`;
     domString += `  <div id="${item.id}-overlay" class="card-img-overlay bg-overlay m-3">`;
     domString += `    <h5 class="overlay-title text-white">${item.title}</h5>`;
+    domString += '    <button class="watched btn btn-outline-light">Watched</button>';
     domString += '  </div>';
     domString += '</div>';
   });
   print.printToDom('movies', domString);
   overlayEvents();
+  $('.watched').click(watchedlist.initWatchedlist);
 };
 
 const initMovies = () => {
