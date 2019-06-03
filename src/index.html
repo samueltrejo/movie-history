@@ -4,21 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>Movie History</title>
 </head>
 <body>
   <!-- Navigation -->
   <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <button class="navbar-brand typewriter btn btn-outline-dark">Movie History</button>
+      <button id="home" class="navbar-brand typewriter btn btn-outline-dark">Movie History</button>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <button class="not-authed nav-item nav-link btn btn-outline-dark">Authentication <span class="sr-only">(current)</span></button>
-          <button class="authed nav-item nav-link btn btn-outline-dark">Movies</button>
-          <button class="authed nav-item nav-link btn btn-outline-dark">Watched List</button>
+          <button id="show-movies" class="authed nav-item nav-link btn btn-outline-dark">Movies</button>
+          <button id="show-watchedlist" class="authed nav-item nav-link btn btn-outline-dark">Watched List</button>
           <button id="logout" class="authed nav-item nav-link btn btn-outline-dark">Logout</button>
         </div>
       </div>
@@ -31,8 +32,13 @@
     </div>
 
     <div id="movies-view" class="authed">
-      <h3>Movies</h3>
+      <h3 class="p-3">Movies</h3>
       <div id="movies" class="d-flex flex-wrap"></div>
+    </div>
+
+    <div id="watchedlist-view" class="authed">
+      <h3 class="p-3">Watched List</h3>
+      <div id="watchedlist" class="d-flex flex-wrap"></div>
     </div>
   </div>
 </body>

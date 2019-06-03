@@ -3,6 +3,23 @@ import fbref from '../fbconfig.json';
 
 const firebaseUrl = fbref.firebaseConfig.databaseURL;
 
-const addUserMovie = userMovie => axios.post(`${firebaseUrl}/userMovies.json`, userMovie);
+const addUserMovie = userMovie => axios.post(`${firebaseUrl}/usermovies.json`, userMovie);
 
-export default { addUserMovie };
+const editUsermovie = (usermovie, usermoviesId) => axios.put(`${firebaseUrl}/usermovies/${usermoviesId}.json`, usermovie);
+
+const getUsermoviesByUid = uid => new Promise((resolve, reject) => {
+  axios.get(`${firebaseUrl}/usermovies.json?orderBy="uid"&equalTo="${uid}"`)
+    .then((results) => {
+      const usermoviesResults = results.data;
+      const usermovies = [];
+      Object.keys(usermoviesResults).forEach((usermoviesId) => {
+        usermoviesResults[usermoviesId].id = usermoviesId;
+        usermoviesResults[usermoviesId].rating = '';
+        usermovies.push(usermoviesResults[usermoviesId]);
+      });
+      resolve(usermovies);
+    })
+    .catch(error => reject(error));
+});
+
+export default { addUserMovie, editUsermovie, getUsermoviesByUid };
