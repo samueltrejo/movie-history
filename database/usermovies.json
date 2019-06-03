@@ -1,0 +1,20 @@
+{
+  "usermovie1": {
+    "uid": "MaQ4mA8ClBT3omtmKAgKCkdGJzl1",
+    "movieId": "movie1",
+    "isWatched": true,
+    "rating": 5
+  },
+  "usermovie2": {
+    "uid": "MaQ4mA8ClBT3omtmKAgKCkdGJzl1",
+    "movieId": "movie4",
+    "isWatched": true,
+    "rating": 5
+  },
+  "usermovie3": {
+    "uid": "MaQ4mA8ClBT3omtmKAgKCkdGJzl1",
+    "movieId": "movie10",
+    "isWatched": true,
+    "rating": null
+  }
+}
