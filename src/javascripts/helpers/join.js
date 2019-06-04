@@ -4,6 +4,7 @@ const moviesUsermovies = (movies, usermovies) => movies.map((movie) => {
   if (specificUsermovie) {
     newMovie.usermovieId = specificUsermovie.id;
     newMovie.isWatched = specificUsermovie.isWatched;
+    newMovie.rating = specificUsermovie.rating;
   }
   return newMovie;
 });

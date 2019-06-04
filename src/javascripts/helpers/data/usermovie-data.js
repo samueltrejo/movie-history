@@ -14,7 +14,6 @@ const getUsermoviesByUid = uid => new Promise((resolve, reject) => {
       const usermovies = [];
       Object.keys(usermoviesResults).forEach((usermoviesId) => {
         usermoviesResults[usermoviesId].id = usermoviesId;
-        usermoviesResults[usermoviesId].rating = '';
         usermovies.push(usermoviesResults[usermoviesId]);
       });
       resolve(usermovies);
