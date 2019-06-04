@@ -34,7 +34,7 @@ const addToWatched = (event) => {
   }
 };
 
-const addToWatchedWithRating = (previousRating, rating, usermovieId, movieId) => {
+const addToWatchedWithRating = (rating, usermovieId, movieId) => {
   const { uid } = firebase.auth().currentUser;
 
   const userMovie = {
@@ -57,7 +57,6 @@ const addToWatchedWithRating = (previousRating, rating, usermovieId, movieId) =>
 const attachRatingEvents = (event) => {
   const movieId = event.target.id;
   const usermovieId = event.target.dataset.value;
-  const previousRating = document.getElementById(`${movieId}-rating`).dataset.value;
 
   const star1 = document.getElementById(`star1.${movieId}`);
   const star2 = document.getElementById(`star2.${movieId}`);
@@ -83,14 +82,14 @@ const attachRatingEvents = (event) => {
       star3state = 'star_border';
       star4state = 'star_border';
       star5state = 'star_border';
-      addToWatchedWithRating(previousRating, 0, usermovieId, movieId);
+      addToWatchedWithRating(0, usermovieId, movieId);
     } else {
       star1state = 'star';
       star2state = 'star_border';
       star3state = 'star_border';
       star4state = 'star_border';
       star5state = 'star_border';
-      addToWatchedWithRating(previousRating, star1.dataset.value, usermovieId, movieId);
+      addToWatchedWithRating(star1.dataset.value, usermovieId, movieId);
     }
   });
 
@@ -107,7 +106,7 @@ const attachRatingEvents = (event) => {
     star3state = 'star_border';
     star4state = 'star_border';
     star5state = 'star_border';
-    addToWatchedWithRating(previousRating, star2.dataset.value, usermovieId, movieId);
+    addToWatchedWithRating(star2.dataset.value, usermovieId, movieId);
   });
 
   star3.addEventListener('click', () => {
@@ -125,7 +124,7 @@ const attachRatingEvents = (event) => {
     star3state = 'star';
     star4state = 'star_border';
     star5state = 'star_border';
-    addToWatchedWithRating(previousRating, star3.dataset.value, usermovieId, movieId);
+    addToWatchedWithRating(star3.dataset.value, usermovieId, movieId);
   });
 
   star4.addEventListener('click', () => {
@@ -145,7 +144,7 @@ const attachRatingEvents = (event) => {
     star3state = 'star';
     star4state = 'star';
     star5state = 'star_border';
-    addToWatchedWithRating(previousRating, star4.dataset.value, usermovieId, movieId);
+    addToWatchedWithRating(star4.dataset.value, usermovieId, movieId);
   });
 
   star5.addEventListener('click', () => {
@@ -167,7 +166,7 @@ const attachRatingEvents = (event) => {
     star3state = 'star';
     star4state = 'star';
     star5state = 'star';
-    addToWatchedWithRating(previousRating, star5.dataset.value, usermovieId, movieId);
+    addToWatchedWithRating(star5.dataset.value, usermovieId, movieId);
   });
 
   $('.star').mouseover((starEvent) => {
@@ -225,7 +224,7 @@ const writeMovies = (array) => {
     domString += `    <h5 class="overlay-title text-white">${item.title}</h5>`;
     domString += `    <button id="${item.usermovieId}" class="watched btn btn-outline-light">Watched</button>`;
     domString += `    ${item.isWatched ? '<i class="material-icons text-white">check</i>' : ''}`;
-    domString += `    <div id="${item.id}-rating" class="rating d-flex flex-wrap text-white mt-2" data-value="${item.rating}">`;
+    domString += `    <div id="${item.id}-rating" class="rating d-flex flex-wrap text-white mt-2">`;
     domString += `      <span id="star1.${item.id}" class="star material-icons mx-1" data-value="1">${item.rating >= 1 ? 'star' : 'star_border'}</span>`;
     domString += `      <span id="star2.${item.id}" class="star material-icons mx-1" data-value="2">${item.rating >= 2 ? 'star' : 'star_border'}</span>`;
     domString += `      <span id="star3.${item.id}" class="star material-icons mx-1" data-value="3">${item.rating >= 3 ? 'star' : 'star_border'}</span>`;
