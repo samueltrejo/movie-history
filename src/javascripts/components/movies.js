@@ -247,7 +247,6 @@ const initMovies = (uid) => {
       usermovieData.getUsermoviesByUid(uid)
         .then((usermovies) => {
           const newMovies = join.moviesUsermovies(movies, usermovies);
-          console.error(newMovies);
           writeMovies(newMovies);
         });
     })
