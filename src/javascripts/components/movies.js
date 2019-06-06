@@ -222,7 +222,8 @@ const writeMovies = (array) => {
     domString += `  <img id=${item.id} src="${item.image}" class="d-block w-100 movie-image position-relative" alt="movie cover of ${item.title}" data-value="${item.usermovieId}" onerror="imageError(this)">`;
     domString += `  <div id="${item.id}-overlay" class="card-img-overlay bg-overlay m-3">`;
     domString += `    <span id="${item.usermovieId}" class="watched material-icons position-absolute text-white m-1" style="cursor: pointer; font-size: 30px; top: 0; right: 0;">`;
-    domString += `      ${item.isWatched ? 'remove_red_eye' : 'add_circle'}</span>`;
+    domString += `      ${item.isWatched ? 'visibility' : 'visibility_off'}</span>`;
+    domString += `    <button class="position-absolute btn btn-outline-light m-1 p-0" style="cursor: pointer; font-size: 15px; top: 0; left: 0;">${item.mpaa}</button>`;
     domString += '    <div class="d-flex flex-column justify-content-between align-items-center h-100">';
     domString += `      <h5 class="overlay-title text-white text-center">${item.title}</h5>`;
     domString += `      <div id="${item.id}-rating" class="rating d-flex flex-wrap text-white mt-2">`;
