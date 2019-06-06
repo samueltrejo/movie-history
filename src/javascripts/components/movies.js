@@ -219,7 +219,7 @@ const writeMovies = (array) => {
   let domString = '';
   array.forEach((item) => {
     domString += '<div class="col-3 p-3 movie-card">';
-    domString += `  <img id=${item.id} src=${item.image} class="d-block w-100 movie-image" alt="movie cover of ${item.title}" data-value="${item.usermovieId}">`;
+    domString += `  <img id=${item.id} src=${item.image} class="d-block w-100 movie-image" alt="movie cover of ${item.title}" data-value="${item.usermovieId}" onerror="imageError(this)">`;
     domString += `  <div id="${item.id}-overlay" class="card-img-overlay bg-overlay m-3">`;
     domString += `    <h5 class="overlay-title text-white">${item.title}</h5>`;
     domString += `    <button id="${item.usermovieId}" class="watched btn btn-outline-light">Watched</button>`;

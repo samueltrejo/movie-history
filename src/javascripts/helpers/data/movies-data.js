@@ -3,6 +3,8 @@ import fbref from '../fbconfig.json';
 
 const firebaseUrl = fbref.firebaseConfig.databaseURL;
 
+const addMovie = newMovie => axios.post(`${firebaseUrl}/movies.json`, newMovie);
+
 const getMovieData = () => new Promise((resolve, reject) => {
   axios.get(`${firebaseUrl}/movies.json`)
     .then((results) => {
@@ -17,4 +19,4 @@ const getMovieData = () => new Promise((resolve, reject) => {
     .catch(error => reject(error));
 });
 
-export default { getMovieData };
+export default { getMovieData, addMovie };
