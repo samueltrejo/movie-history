@@ -7,6 +7,9 @@ const addUserMovie = userMovie => axios.post(`${firebaseUrl}/usermovies.json`, u
 
 const editUsermovie = (usermovie, usermoviesId) => axios.put(`${firebaseUrl}/usermovies/${usermoviesId}.json`, usermovie);
 
+const deleteUsermovie = usermovieId => axios.delete(`${firebaseUrl}/usermovies/${usermovieId}.json`);
+
+
 const getUsermoviesByUid = uid => new Promise((resolve, reject) => {
   axios.get(`${firebaseUrl}/usermovies.json?orderBy="uid"&equalTo="${uid}"`)
     .then((results) => {
@@ -21,4 +24,9 @@ const getUsermoviesByUid = uid => new Promise((resolve, reject) => {
     .catch(error => reject(error));
 });
 
-export default { addUserMovie, editUsermovie, getUsermoviesByUid };
+export default {
+  addUserMovie,
+  editUsermovie,
+  deleteUsermovie,
+  getUsermoviesByUid,
+};
