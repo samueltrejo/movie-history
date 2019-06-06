@@ -224,8 +224,9 @@ const writeMovies = (array) => {
     domString += `    <span id="${item.usermovieId}" class="watched material-icons position-absolute text-white m-1" style="cursor: pointer; font-size: 30px; top: 0; right: 0;">`;
     domString += `      ${item.isWatched ? 'visibility' : 'visibility_off'}</span>`;
     domString += `    <button class="position-absolute btn btn-outline-light m-1 p-0" style="cursor: pointer; font-size: 15px; top: 0; left: 0;">${item.mpaa}</button>`;
-    domString += '    <div class="d-flex flex-column justify-content-between align-items-center h-100">';
+    domString += '    <div class="d-flex flex-column justify-content-between align-items-center h-100 pt-3">';
     domString += `      <h5 class="overlay-title text-white text-center">${item.title}</h5>`;
+    domString += '      <span class="material-icons text-white" style="font-size: 100px;">theaters</span>';
     domString += `      <div id="${item.id}-rating" class="rating d-flex flex-wrap text-white mt-2">`;
     domString += `        <span id="star1.${item.id}" class="star material-icons mx-1" data-value="1">${item.rating >= 1 ? 'star' : 'star_border'}</span>`;
     domString += `        <span id="star2.${item.id}" class="star material-icons mx-1" data-value="2">${item.rating >= 2 ? 'star' : 'star_border'}</span>`;
