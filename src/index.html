@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script>
+    const imageError = (img) => {
+      console.error(img.src)
+    };
+  </script>
   <title>Movie History</title>
 </head>
 <body>
@@ -32,13 +37,37 @@
     </div>
 
     <div id="movies-view" class="authed">
-      <h3 class="p-3">Movies</h3>
+      <div class="btn-group p-3">
+        <button class="font-1 btn btn-dark rounded-0">Movies</button>
+        <button class="btn btn-dark pb-0 rounded-0" data-toggle="modal" data-target="#movie-add"><i class="font-1.55 material-icons">add</i></button>
+      </div>
       <div id="movies" class="d-flex flex-wrap"></div>
     </div>
 
-    <div id="watchedlist-view" class="authed">
+    <div id="watchedlist-view" class="authed-hidden">
       <h3 class="p-3">Watched List</h3>
       <div id="watchedlist" class="d-flex flex-wrap"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="movie-add">
+    <div class="modal-dialog">
+      <div class="modal-content rounded-0 border-0">
+        <div class="modal-header border-0 pb-0">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline: none;">
+            <i class="material-icons">cancel</i>
+          </button>
+        </div>
+        <h1 class="display-4 m-auto">Add Movie</h1>
+        <div class="modal-body">
+          <input id="movie-title-input" type="text" class="form-control my-3" placeholder="Movie Title">
+          <input id="movie-mpaa-input" type="text" class="form-control mb-3" placeholder="mpaa">
+          <input id="movie-image-input" type="text" class="form-control" placeholder="Image URL">
+        </div>
+        <div class="modal-footer justify-content-center border-0">
+          <button id="add-movie" type="button" class="btn btn-dark rounded-0 px-4" data-dismiss="modal">Save Movie</button>
+        </div>
+      </div>
     </div>
   </div>
 </body>

@@ -1,4 +1,5 @@
 import firebase from 'firebase/app';
+import 'bootstrap';
 
 import auth from './components/auth';
 import authData from './helpers/data/auth-data';
