@@ -10,7 +10,7 @@ const writeUsermovies = (usermovies) => {
   let domString = '';
   usermovies.forEach((usermovie) => {
     domString += '<div class="col-3 p-3 movie-card">';
-    domString += `  <img id=${usermovie.id}-image src=${usermovie.movieImage} class="d-block w-100 movie-image" alt="movie cover of ${usermovie.movieTitle}">`;
+    domString += `  <img id=${usermovie.id}-image src=${usermovie.movieImage} class="d-block w-100 movie-image" alt="movie cover of ${usermovie.movieTitle}" onerror="imageError(this)">`;
     domString += `  <div id="${usermovie.id}-overlay" class="card-img-overlay bg-overlay m-3">`;
     domString += `    <h5 class="overlay-title text-white">${usermovie.movieTitle}</h5>`;
     domString += `    <button id="${usermovie.id}" class="watched btn btn-outline-light">Delete</button>`;
