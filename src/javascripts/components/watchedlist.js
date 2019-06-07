@@ -32,8 +32,8 @@ const writeUsermovies = (usermovies) => {
     domString += '<div class="col-3 p-3 movie-card">';
     domString += `  <img id=${usermovie.id}-image src=${usermovie.movieImage} class="d-block w-100 movie-image position-relative" alt="movie cover of ${usermovie.movieTitle}" onerror="imageError(this)">`;
     domString += `  <div id="${usermovie.id}-overlay" class="card-img-overlay bg-overlay m-3">`;
-    domString += `    <span data-value="${usermovie.id}" class="delete-movie material-icons position-absolute text-white m-1" style="cursor: pointer; transform: rotate(45deg); font-size: 30px; top: 0; right: 0;">add_circle_outline</span>`;
-    domString += `    <button class="position-absolute btn btn-outline-light m-1 p-0" style="cursor: pointer; font-size: 15px; top: 0; left: 0;">${usermovie.movieMpaa}</button>`;
+    domString += `    <span data-value="${usermovie.id}" class="delete-movie delete-movie-icon material-icons">add_circle_outline</span>`;
+    domString += `    <span class="rating-icon btn btn-outline-light">${usermovie.movieMpaa}</span>`;
     domString += `    <h5 class="overlay-title text-white text-center">${usermovie.movieTitle}</h5>`;
     domString += '  </div>';
     domString += '</div>';

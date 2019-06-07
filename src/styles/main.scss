@@ -20,6 +20,38 @@ body {
   animation-duration: 0.4s;
 }
 
+.watched-icon {
+  cursor: pointer;
+  font-size: 30px;
+  top: 0;
+  right: 0;
+  position: absolute;
+  color: white;
+  margin: 0.25rem;
+}
+
+.rating-icon {
+  cursor: pointer;
+  font-size: 15px;
+  top: 0;
+  left: 0;
+  margin: 0.25rem;
+  padding: 0;
+  position: absolute;
+}
+
+.delete-movie-icon {
+  cursor: pointer;
+  transform:
+  rotate(45deg);
+  font-size: 30px;
+  top: 0;
+  right: 0;
+  position: absolute;
+  color: white;
+  margin: 0.25rem;
+}
+
 @keyframes bounce {
   0%{
     opacity: 0;
