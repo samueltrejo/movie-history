@@ -1,7 +1,7 @@
 # Movie History 
 A web app with library of movies, and ability to add new movies, add movies to a list if you watched them, rate movies and remove from watched list.
 
-![image of acme explosives app](/src/img/readme.png)
+![image of acme explosives app](https://raw.githubusercontent.com/samueltrejo/movie-history/master/src/img/readme.PNG)
 
 ## Technologies Used
 * html, scss and javascript
