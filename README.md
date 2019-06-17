@@ -23,7 +23,7 @@ https://nodejs.org/en/
 ## How To Run
 ```
 # Clone this repository
-$ git clone https://github.com/bobbybaxter/movie-history.git
+$ git clone https://github.com/samueltrejo/movie-history.git
 
 # Go into the repository
 $ cd acme-explosives
