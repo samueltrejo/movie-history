@@ -6,6 +6,7 @@ import movieData from '../helpers/data/movies-data';
 import print from '../helpers/print';
 import usermovieData from '../helpers/data/usermovie-data';
 import join from '../helpers/join';
+import genericMovie from '../../img/generic-mov.png';
 
 const overlayEvents = () => {
   $('.card-img-overlay').hide();
@@ -215,11 +216,16 @@ const attachRatingEvents = (event) => {
   });
 };
 
+const imageError = (event) => {
+  const img = event.target;
+  img.src = genericMovie;
+};
+
 const writeMovies = (array) => {
   let domString = '';
   array.forEach((item) => {
     domString += '<div class="col-3 p-3 movie-card">';
-    domString += `  <img id=${item.id} src="${item.image}" class="d-block w-100 movie-image position-relative" alt="movie cover of ${item.title}" data-value="${item.usermovieId}" onerror="imageError(this)">`;
+    domString += `  <img id=${item.id} src="${item.image}" class="d-block w-100 movie-image position-relative" alt="movie cover of ${item.title}" data-value="${item.usermovieId}">`;
     domString += `  <div id="${item.id}-overlay" class="card-img-overlay bg-overlay m-3">`;
     domString += `    <span id="${item.usermovieId}" class="watched material-icons position-absolute text-white m-1" style="cursor: pointer; font-size: 30px; top: 0; right: 0;">`;
     domString += `      ${item.isWatched ? 'visibility' : 'visibility_off'}</span>`;
@@ -242,6 +248,7 @@ const writeMovies = (array) => {
   overlayEvents();
   $('.watched').click(addToWatched);
   $('.movie-image').mouseover(attachRatingEvents);
+  $('.movie-image').on('error', imageError);
 };
 
 const initMovies = (uid) => {
